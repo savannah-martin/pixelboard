@@ -68,8 +68,7 @@ document.addEventListener('keypress', function( event ) {
     if( event.code === "Enter") {
         blink();
     }
-
-
+    
     if( event.key == 'a') {
         if ( activeIndex % WIDTH === 0) {
             activeIndex += WIDTH;    
@@ -78,6 +77,31 @@ document.addEventListener('keypress', function( event ) {
         
         setColor(  getSquareByIndex(activeIndex) );
     }
+    if( event.key == 'd') {
+        if ((activeIndex+1) % WIDTH === 0) {
+            activeIndex -= WIDTH;    
+        }
+        activeIndex = activeIndex + 1;
+        
+        setColor(  getSquareByIndex(activeIndex) );
+    }
+    if( event.key == 'w') {
+        if ( activeIndex < WIDTH) {
+            activeIndex += SQUARES;    
+        }
+        activeIndex = activeIndex - WIDTH;
+        
+        setColor(  getSquareByIndex(activeIndex) );
+    }
+    if( event.key == 's') {
+        if ( activeIndex > (SQUARES - WIDTH)) {
+            activeIndex -= SQUARES;    
+        }
+        activeIndex = activeIndex + WIDTH;
+        
+        setColor(  getSquareByIndex(activeIndex) );
+    }
 
+    
 
 });
