@@ -18,14 +18,6 @@ for(let i=0; i < SQUARES; i++) {
     square.addEventListener('mouseout', ()=> removeColor(square));
     
     container.appendChild(square);
-
-    square.addEventListener( 'mousedown', function () { 
-        setColor(getSquareByIndex(activeIndex));
-        setTimeout( ()=> setColor(getSquareByIndex(activeIndex-20)), 500);
-        setTimeout( ()=> setColor(getSquareByIndex(activeIndex+20)), 500);
-        setTimeout( ()=> setColor(getSquareByIndex(activeIndex-1)), 500);
-        setTimeout( ()=> setColor(getSquareByIndex(activeIndex+1)), 500);
-});
 }
 
 function getRandomColor() {
@@ -111,6 +103,29 @@ document.addEventListener('keypress', function( event ) {
     }
 });
 
-// document.addEventListener('click', function() {
-//     setColor(  getSquareByIndex(activeIndex) );
-// });
+function getRandomIndex() {
+    let min = Math.ceil(WIDTH);
+    let max = Math.floor(SQUARES - WIDTH);
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+
+document.addEventListener('click', function() {
+
+    let randomI = getRandomIndex();
+    if (randomI % WIDTH === 0 || (randomI + 1) % WIDTH === 0){
+        randomI = getRandomIndex();
+    }
+
+    setColor(getSquareByIndex(randomI));
+    setTimeout( ()=> setColor(getSquareByIndex(randomI-20)), 600);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI+20)), 600);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI-1)), 600);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI+1)), 600);
+    
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI)), 900);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI-20)), 1400);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI+20)), 1400);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI-1)), 1400);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI+1)), 1400);
+});
