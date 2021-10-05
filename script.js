@@ -18,6 +18,14 @@ for(let i=0; i < SQUARES; i++) {
     square.addEventListener('mouseout', ()=> removeColor(square));
     
     container.appendChild(square);
+
+    square.addEventListener( 'mousedown', function () { 
+        setColor(getSquareByIndex(activeIndex));
+        setTimeout( ()=> setColor(getSquareByIndex(activeIndex-20)), 500);
+        setTimeout( ()=> setColor(getSquareByIndex(activeIndex+20)), 500);
+        setTimeout( ()=> setColor(getSquareByIndex(activeIndex-1)), 500);
+        setTimeout( ()=> setColor(getSquareByIndex(activeIndex+1)), 500);
+});
 }
 
 function getRandomColor() {
@@ -103,6 +111,6 @@ document.addEventListener('keypress', function( event ) {
     }
 });
 
-document.addEventListener('click', function() {
-    setColor(  getSquareByIndex(activeIndex) );
-});
+// document.addEventListener('click', function() {
+//     setColor(  getSquareByIndex(activeIndex) );
+// });
