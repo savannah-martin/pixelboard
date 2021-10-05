@@ -101,7 +101,8 @@ document.addEventListener('keypress', function( event ) {
         
         setColor(  getSquareByIndex(activeIndex) );
     }
+});
 
-    
-
+document.addEventListener('click', function() {
+    setColor(  getSquareByIndex(activeIndex) );
 });
