@@ -122,10 +122,29 @@ document.addEventListener('click', function() {
     setTimeout( ()=> setColor(getSquareByIndex(randomI+20)), 600);
     setTimeout( ()=> setColor(getSquareByIndex(randomI-1)), 600);
     setTimeout( ()=> setColor(getSquareByIndex(randomI+1)), 600);
+
+    setTimeout( ()=> setColor(getSquareByIndex(randomI-19)), 1200);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI-21)), 1200);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI+19)), 1200);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI+21)), 1200);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI-2)), 1200);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI+2)), 1200);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI-40)), 1200);
+    setTimeout( ()=> setColor(getSquareByIndex(randomI+40)), 1200);
     
     setTimeout( ()=> removeColor(getSquareByIndex(randomI)), 900);
     setTimeout( ()=> removeColor(getSquareByIndex(randomI-20)), 1400);
     setTimeout( ()=> removeColor(getSquareByIndex(randomI+20)), 1400);
     setTimeout( ()=> removeColor(getSquareByIndex(randomI-1)), 1400);
     setTimeout( ()=> removeColor(getSquareByIndex(randomI+1)), 1400);
+    
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI-19)), 2000);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI-21)), 2000);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI+19)), 2000);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI+21)), 2000);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI-2)), 2000);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI+2)), 2000);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI-40)), 2000);
+    setTimeout( ()=> removeColor(getSquareByIndex(randomI+40)), 2000);
+    
 });
